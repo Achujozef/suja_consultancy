@@ -12,7 +12,7 @@ services:
     networks:
       - suja_backend_tier
 
-  ageis:
+  suja:
     restart: always
     build: .
     depends_on: 
