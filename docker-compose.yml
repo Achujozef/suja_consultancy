@@ -5,12 +5,12 @@ services:
     image: postgres:14.0
     restart: always 
     environment:
-      - POSTGRES_USER=ageisUser
-      - POSTGRES_PASSWORD=ageisPassword 
+      - POSTGRES_USER=sujaUser
+      - POSTGRES_PASSWORD=sujaPassword 
     volumes:
-      - ageis_db_data:/var/lib/postgresql/data
+      - suja_db_data:/var/lib/postgresql/data
     networks:
-      - ageis_backend_tier
+      - suja_backend_tier
 
   ageis:
     restart: always
@@ -28,14 +28,14 @@ services:
     expose:
       - "8009"
     networks:
-      - ageis_backend_tier
+      - suja_backend_tier
 
 volumes:
-  ageis_db_data:
+  suja_db_data:
     driver: local 
   static_volume:
     driver: local
 
 networks:
-  ageis_backend_tier: 
+  suja_backend_tier: 
     driver: bridge
