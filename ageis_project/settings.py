@@ -40,7 +40,7 @@ SECRET_KEY = 'django-insecure-3ea1=h^%g&zr1wp*q9nc+lgx*yjiu=zu!vd!)w6s)249&#y+yt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*','ageisrecruitment.online','45.130.229.250','localhost','agies.a2zserver.in']
+ALLOWED_HOSTS = ['*','sujaconsultancy.com','88.222.244.98','localhost', 'www.sujaconsultancy.com']
 
 # Application definition
 
@@ -83,6 +83,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ageis_project.wsgi.application'
+
+CSRF_TRUSTED_ORIGINS = ['https://sujaconsultancy.com', 'https://www.sujaconsultancy.com']
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 
 # Database
@@ -144,7 +148,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 

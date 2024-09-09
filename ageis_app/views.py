@@ -2947,16 +2947,17 @@ def user_profile(request):
         return render(request, 'user_profile.html', context)
     
     except ExtendedUserModel.DoesNotExist:
-        # Handle case where the ExtendedUserModel instance does not exist
-        messages.error(request, 'User profile does not exist.')
-        return render(request, 'error.html', {'message': 'User profile does not exist.'})
+        pass
+    #     # Handle case where the ExtendedUserModel instance does not exist
+    #     messages.error(request, 'User profile does not exist.')
+    #     return render(request, 'error.html', {'message': 'User profile does not exist.'})
     
-    except Exception as e:
-        # Log the exception or handle it as needed
-        print(f"An error occurred: {e}")
-        # Add an error message to be displayed on the error page
-        messages.error(request, 'An unexpected error occurred. Please try again later.')
-        return render(request, 'error.html', {'message': str(e)})
+    # except Exception as e:
+    #     # Log the exception or handle it as needed
+    #     print(f"An error occurred: {e}")
+    #     # Add an error message to be displayed on the error page
+    #     messages.error(request, 'An unexpected error occurred. Please try again later.')
+    #     return render(request, 'error.html', {'message': str(e)})
     
 
 
