@@ -193,14 +193,14 @@
             
           </li>
 
-          <li class="nav-item">
+          {% comment %} <li class="nav-item">
             <a href="{% url 'ageis_app:about_us_backend' %}" class="nav-link">
               <span><img src="{% static 'dist/img/icon/share.gif' %}" class="nav-icon"></span>
               <p>
                 About Us
               </p>
             </a>
-          </li>
+          </li> {% endcomment %}
           <li class="nav-item">
             <a href="{% url 'ageis_app:shortlisted_jobs'%}" class="nav-link">
               <span><img src="{% static 'dist/img/icon/absence.gif' %}" class="nav-icon"></span>
@@ -247,7 +247,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Users</li>
+              <li class="breadcrumb-item active">Candidates</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -515,7 +515,9 @@
                                         <tr>
                                             <td>
                                                 {% if i.user.first_name or i.user.last_name %}
-                                                {{ i.id }} {{ i.user.first_name }} {{ i.user.last_name }}
+                                                Candidate Id {{ i.id }} 
+                                                <br>
+                                                {{ i.user.first_name }} {{ i.user.last_name }}
                                                 {% else %}
                                                 Name not entered
                                                 {% endif %}

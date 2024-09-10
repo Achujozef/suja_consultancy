@@ -145,7 +145,7 @@
               <a href="{% url 'ageis_app:user_management' %}" class="nav-link">
                   <span><img src="{% static 'dist/img/icon/user.gif' %}" class="nav-icon"></span>
                 <p>
-                  Users
+                  Candidates
                 </p>
               </a>
             </li>
@@ -332,8 +332,8 @@
                 <td>{{ applied_job.applied_job.company.company_name }}</td>
                 <td>
                   {% if not applied_job.is_invited %}
-                  <button onclick="openPopup('{{ applied_job.id }}')" class="btn btn-success">Schedule Interview</button>
-                  {% else %}
+                  <button onclick="openPopup('{{ applied_job.id }}')" class="btn btn-success">Shortlisted</button>
+                  {% comment %} {% else %}
                   <button disabled class="btn btn-secondary mb-2 p-1">Invitation Sent</button>
                   {% if applied_job.result == 'default' %}
                   <button onclick="updateResult('{{ applied_job.id }}', 'selected')" class="btn btn-success">Interview is over and Selected</button>
@@ -350,7 +350,7 @@
                   {% elif applied_job.result == 'on_hold' %}
                   <button disabled class="btn btn-success mb-2 p-1">Interview is Over</button>
                   <button disabled class="btn btn-danger mb-2 p-1">On Hold</button>
-                  {% endif %}
+                  {% endif %} {% endcomment %}
                   {% endif %}
                 </td>
               </tr>
