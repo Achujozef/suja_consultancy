@@ -2840,7 +2840,7 @@ def contact_us(request):
                 'Enquiry',
                 email_body,
                 settings.EMAIL_HOST_USER,
-                ['support@ageisrecruitment.online'],
+                ['achujoseph@trivlogic.com'],
                 fail_silently=False,
             )
             
