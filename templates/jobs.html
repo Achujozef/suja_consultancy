@@ -536,7 +536,9 @@
                                           <td>
                                             <ul class="status" style="margin-left:-4%">
                                                 <li style="margin-right:2%"><a href="{% url 'ageis_app:jobs_edit' i.id %}"><i class="fa fa-edit text-green"></i></a></li>
+                                                {% if request.user.extenedusermodel.user_type != 'staff' %}
                                                 <li><a href="{% url 'ageis_app:job_delete' i.id %}"><i class="fa fa-trash-alt text-danger"></i></a></li>
+                                                {% endif %}
                                             </ul>
                                         </td>
 
