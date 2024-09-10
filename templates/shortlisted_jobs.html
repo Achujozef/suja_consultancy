@@ -332,7 +332,8 @@
                 <td>{{ applied_job.applied_job.company.company_name }}</td>
                 <td>
                   {% if not applied_job.is_invited %}
-                  <button onclick="openPopup('{{ applied_job.id }}')" class="btn btn-success">Shortlisted</button>
+                  <button onclick="" class="btn btn-success">Shortlisted</button>
+                  {% comment %} <button onclick="openPopup('{{ applied_job.id }}')" class="btn btn-success">Shortlisted</button> {% endcomment %}
                   {% comment %} {% else %}
                   <button disabled class="btn btn-secondary mb-2 p-1">Invitation Sent</button>
                   {% if applied_job.result == 'default' %}
