@@ -38,6 +38,7 @@ def error_page(request):
 
 
 def index(request):
+    extenedusermodel = None
     try:
 
         recent_jobs = []
@@ -1834,8 +1835,11 @@ def jobs_frontend(request):
 
 
 def jobs_frontend_cat(request, cat_id=None):
+    
     try:
+        extended_user = None
         if cat_id:
+            print("cat_id",cat_id)
             if request.user.is_authenticated:
                 user = request.user
                 extended_user_qs = ExtendedUserModel.objects.filter(user=user)
@@ -2189,6 +2193,7 @@ def applied_jobs(request):
 
 
 def search_jobs(request):
+    extended_user = None
     try:
         if request.user.is_authenticated:
             user = request.user

@@ -100,13 +100,13 @@ class JobsAddForm(forms.ModelForm):
             'skills': forms.TextInput(attrs={'class':'form-control w-75','placeholder':"Enter The Skills",'required':'required'}),
             'experience': forms.TextInput(attrs={'class':'form-control w-75', 'placeholder':"Enter The Experience",'required':'required'}),
             'salary': forms.TextInput(attrs={'class':'form-control w-75','placeholder':"Enter The Salary"}),
-            'languages': forms.TextInput(attrs={'class':'form-control w-75','placeholder':"Enter The Language",'required':'required'}),
-            'website_link': forms.URLInput(attrs={'class':'form-control w-75','placeholder':"https://example.com/",'required':'required'}),
+            'languages': forms.TextInput(attrs={'class':'form-control w-75','placeholder':"Enter The Language",}),
+            'website_link': forms.URLInput(attrs={'class':'form-control w-75','placeholder':"https://example.com/"}),
         }
     company_name =  forms.ModelChoiceField(queryset=Clients.objects.all(), empty_label="Select Company",widget=forms.Select(attrs={'class':'form-control w-75','required':'required'}))
     country = forms.ModelChoiceField(queryset=Country.objects.all(),empty_label='Select Country',widget=forms.Select(attrs={'class':'form-control w-75','required':'required'}))
-    state = forms.ModelChoiceField(queryset=State.objects.all(),empty_label='Select State',widget=forms.Select(attrs={'class':'form-control w-75','required':'required'}))
-    district = forms.ModelChoiceField(queryset=district.objects.all(),empty_label='Select District',widget=forms.Select(attrs={'class':'form-control w-75','required':'required'}))
+    state = forms.ModelChoiceField(queryset=State.objects.all(),empty_label='Select State',widget=forms.Select(attrs={'class':'form-control w-75'}))
+    district = forms.ModelChoiceField(queryset=district.objects.all(),empty_label='Select District',widget=forms.Select(attrs={'class':'form-control w-75'}))
     job_category = forms.ModelChoiceField(queryset=JobCategories.objects.all(),empty_label='Select Job Categories',widget=forms.Select(attrs={'class':'form-control w-75','required':'required'}))
     job_type = forms.ModelChoiceField(queryset=JobType.objects.all(),empty_label='Select Job Type',widget=forms.Select(attrs={'class':'form-control w-75','required':'required'}))
 
